@@ -35,11 +35,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
+  justify-content: space-between;
+  min-width: 250px;
+  min-height: 250px;
+  padding: 20px 0;
+  border-top: 7px solid rgb(83, 235, 235);
+  border-radius: 3%;
   background-color: hsl(228, 28%, 20%);
 }
-
 .container .social-info {
   display: flex;
   flex-direction: row;
