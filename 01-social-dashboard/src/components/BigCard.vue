@@ -39,15 +39,14 @@ export default {
   min-width: 250px;
   min-height: 230px;
   padding: 30px 0;
-  border-top: 7px solid rgb(83, 235, 235);
   border-radius: 3%;
-  background-color: hsl(228, 28%, 20%);
+  background-color: var(--cardBg);
   transition: background-color 0.5s;
   cursor: pointer;
 }
 
 .container:hover {
-  background-color: hsl(229, 15%, 28%);
+  background-color: var(--cardBgHover);
 }
 
 .container .social-info {
@@ -57,7 +56,7 @@ export default {
 }
 
 .container .social-info p {
-  color: hsl(228, 34%, 66%);
+  color: var(--textBlue);
   font-weight: 700;
   font-size: 12px;
   margin-left: 10px;
@@ -70,13 +69,13 @@ export default {
 }
 
 .container .values-info h1 {
-  color: hsl(0, 0%, 100%);
+  color: var(--textWhite);
   font-size: 52px;
   font-weight: 700;
 }
 
 .container .values-info p {
-  color: hsl(228, 34%, 66%);
+  color: var(--textBlue);
   font-size: 12px;
   letter-spacing: 5px;
 }
@@ -86,7 +85,7 @@ export default {
   flex-direction: row;
   align-items: center;
 
-  color: hsl(163, 72%, 41%);
+  color: var(--statusGreen);
   font-weight: 700;
   font-size: 12px;
 }

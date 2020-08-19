@@ -14,7 +14,7 @@
     </div>
 
     <div class="main-cards">
-      <div class="content" v-for="social in dataBase" :key="social">
+      <div class="content" v-for="social in dataBase" :key="social" :class="social.class">
         <BigCard
           :socialIcon="social.iconUrl"
           :socialName="social.socialName"
@@ -55,6 +55,7 @@ export default {
           socialType: "F",
           arrowIcon: "up",
           todayValue: 12,
+          class: "facebook",
         },
         {
           iconUrl: "icon-twitter.svg",
@@ -63,6 +64,7 @@ export default {
           socialType: "F",
           arrowIcon: "up",
           todayValue: 99,
+          class: "twitter",
         },
         {
           iconUrl: "icon-instagram.svg",
@@ -71,6 +73,7 @@ export default {
           socialType: "F",
           arrowIcon: "up",
           todayValue: 1099,
+          class: "instagram",
         },
         {
           iconUrl: "icon-youtube.svg",
@@ -79,6 +82,7 @@ export default {
           socialType: "S",
           arrowIcon: "down",
           todayValue: 144,
+          class: "youtube",
         },
       ],
     };
@@ -87,6 +91,24 @@ export default {
 </script>
 
 <style>
+:root {
+  --topBg: #202337;
+  --mainBg: #1e202a;
+  --cardBg: #252a41;
+  --cardBgHover: #3d4152;
+  --textBlue: #8b97c6;
+  --textWhite: #ffffff;
+  --textBlack: #1d1d1d;
+
+  --statusGreen: #1db489;
+  --statusRed: #dc414c;
+
+  --borderFacebook: #198ff5;
+  --borderTwitter: #1ca0f2;
+  --borderYoutube: #c4032a;
+  --borderInstagram: linear-gradient(to right, #df4996, #fdc468);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -109,7 +131,7 @@ button {
 }
 
 body {
-  background-color: hsl(230, 17%, 14%);
+  background-color: var(--mainBg);
 }
 
 #app {
@@ -118,11 +140,11 @@ body {
 
 #app .top-container {
   height: 200px;
-  background-color: hsl(232, 27%, 17%);
+  background-color: var(--topBg);
 }
 
 #app .top-container .top-content {
-  color: #fff;
+  color: var(--textWhite);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -133,7 +155,7 @@ body {
 }
 
 #app .top-container .top-content .top-title p {
-  color: hsl(228, 34%, 66%);
+  color: var(--textBlue);
   margin-top: 5px;
   font-weight: 700;
   font-size: 16px;
@@ -152,5 +174,38 @@ body {
   justify-content: space-between;
   max-width: 80%;
   margin: -80px auto auto auto;
+}
+
+#app .main-cards .facebook::before {
+  content: "";
+  position: absolute;
+  background: var(--borderFacebook);
+  height: 7px;
+  width: 250px;
+  border-radius: 5px 5px 0 0;
+}
+#app .main-cards .twitter::before {
+  content: "";
+  position: absolute;
+  background: var(--borderTwitter);
+  height: 7px;
+  width: 250px;
+  border-radius: 5px 5px 0 0;
+}
+#app .main-cards .instagram::before {
+  content: "";
+  position: absolute;
+  background: var(--borderInstagram);
+  height: 7px;
+  width: 250px;
+  border-radius: 5px 5px 0 0;
+}
+#app .main-cards .youtube::before {
+  content: "";
+  position: absolute;
+  background: var(--borderYoutube);
+  height: 7px;
+  width: 250px;
+  border-radius: 5px 5px 0 0;
 }
 </style>
