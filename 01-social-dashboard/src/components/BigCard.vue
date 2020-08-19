@@ -37,12 +37,19 @@ export default {
   align-items: center;
   justify-content: space-between;
   min-width: 250px;
-  min-height: 250px;
-  padding: 20px 0;
+  min-height: 230px;
+  padding: 30px 0;
   border-top: 7px solid rgb(83, 235, 235);
   border-radius: 3%;
   background-color: hsl(228, 28%, 20%);
+  transition: background-color 0.5s;
+  cursor: pointer;
 }
+
+.container:hover {
+  background-color: hsl(229, 15%, 28%);
+}
+
 .container .social-info {
   display: flex;
   flex-direction: row;
@@ -51,6 +58,9 @@ export default {
 
 .container .social-info p {
   color: hsl(228, 34%, 66%);
+  font-weight: 700;
+  font-size: 12px;
+  margin-left: 10px;
 }
 
 .container .values-info {
@@ -61,15 +71,27 @@ export default {
 
 .container .values-info h1 {
   color: hsl(0, 0%, 100%);
+  font-size: 52px;
+  font-weight: 700;
 }
 
 .container .values-info p {
   color: hsl(228, 34%, 66%);
+  font-size: 12px;
+  letter-spacing: 5px;
 }
 
 .container .today-info {
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  color: hsl(163, 72%, 41%);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.container .today-info p:nth-child(2) {
+  margin: 0 8px;
 }
 </style>
