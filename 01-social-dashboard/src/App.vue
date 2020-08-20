@@ -199,6 +199,12 @@ body {
   align-items: center;
 }
 
+.top-switcher p {
+  color: var(--textBlue);
+  font-weight: 700;
+  font-size: 14px;
+}
+
 #themeSwitcher {
   height: 0;
   width: 0;
@@ -236,6 +242,7 @@ body {
 #app .main-cards {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   max-width: 80%;
@@ -301,5 +308,66 @@ body {
   margin: 30px 0 10px 0;
   width: 100%;
   text-align: center;
+}
+
+@media (max-width: 340px) {
+  #app .top-container .top-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #app .top-container .top-content .top-title h1 {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+
+  #app .top-container .top-content .top-title p {
+    font-size: 12px;
+  }
+
+  #app .top-container .top-content .top-title::after {
+    content: "";
+    width: 100%;
+    height: 100px;
+    background-color: var(--textBlue);
+  }
+
+  #app .top-container .top-content .top-switcher {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #app .main-cards {
+    margin: -50px auto auto auto;
+  }
+
+  #app .main-cards .content {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 691px) {
+  #app .top-container .top-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #app .top-container .top-content .top-title h1 {
+    margin-top: 20px;
+  }
+
+  #app .top-container .top-content .top-switcher {
+    margin-top: 30px;
+  }
+
+  #app .main-cards {
+    margin: -50px auto auto auto;
+  }
+
+  #app .main-cards .content {
+    margin-top: 20px;
+  }
 }
 </style>
