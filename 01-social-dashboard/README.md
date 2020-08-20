@@ -2,7 +2,7 @@
 
 My first [Vue.js](https://vuejs.org/) project, based in a [Frontendmentor.io](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H) challenge.
 
-![Preview](https://github.com/muril0-0/front-end-pratice/01-social-dashboard/blob/master/preview/preview.jpg)
+![Preview](https://github.com/muril0-0/front-end-pratice/blob/master/01-social-dashboard/preview/preview.jpg)
 
 ## Get Started
 
