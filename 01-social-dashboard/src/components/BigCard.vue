@@ -25,7 +25,7 @@ export default {
     socialValue: { type: Number },
     socialType: { type: String },
     arrowIcon: { type: String },
-    todayValue: { type: Number },
+    todayValue: { type: String },
   },
 };
 </script>

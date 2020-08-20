@@ -24,7 +24,7 @@ export default {
     cardIcon: { type: String },
     cardValue: { type: Number },
     cardArrow: { type: String },
-    cardPercent: { type: Number },
+    cardPercent: { type: String },
   },
 };
 </script>
