@@ -7,21 +7,35 @@
           <p>Total Followers: {{sumTotal()}}</p>
         </div>
         <div class="top-switcher">
-          <p>Dark Mode</p>
-          <button>Trocar</button>
+          <p>Theme:</p>
+          <input type="checkbox" id="themeSwitcher" />
         </div>
       </div>
     </div>
 
     <div class="main-cards">
-      <div class="content" v-for="social in dataBase" :key="social" :class="social.class">
+      <div class="content" v-for="social in bigData" :key="social" :class="social.class">
         <BigCard
           :socialIcon="social.iconUrl"
           :socialName="social.socialName"
-          :socialValue="social.socialValue > 10000 ? social.socialValue : social.socialValue"
+          :socialValue="social.socialValue > 9999 ? (social.socialValue/1000)+'k' : social.socialValue"
           :socialType="social.socialType == 'F' ? 'FOLLOWERS' : 'SUBSCRIBERS'"
           :arrowIcon="social.arrowIcon == 'up' ? 'icon-up.svg' : 'icon-down.svg'"
           :todayValue="social.todayValue"
+        />
+      </div>
+    </div>
+    <div class="bottom-container">
+      <h1>Overview - Today</h1>
+    </div>
+    <div class="small-card">
+      <div class="small-content" v-for="info in smallData" :key="info">
+        <SmallCard
+          :cardTitle="info.cardTitle"
+          :cardIcon="info.cardIcon"
+          :cardValue="info.cardValue > 9999 ? (info.cardValue/1000) + 'k' : info.cardValue"
+          :cardArrow="info.cardArrow == 'up' ? 'icon-up.svg' : 'icon-down.svg'"
+          :cardPercent="info.cardPercent + '%'"
         />
       </div>
     </div>
@@ -30,16 +44,21 @@
 
 <script>
 import BigCard from "./components/BigCard.vue";
+import SmallCard from "./components/SmallCard.vue";
+
+import bigData from "./data/bigData";
+import smallData from "./data/smallData";
 export default {
   name: "App",
   components: {
     BigCard,
+    SmallCard,
   },
   methods: {
     sumTotal() {
       let totalValue = 0;
-      for (let i = 0; i < this.dataBase.length; i++) {
-        totalValue += this.dataBase[i].socialValue;
+      for (let i = 0; i < this.bigData.length; i++) {
+        totalValue += this.bigData[i].socialValue;
       }
       return totalValue;
     },
@@ -47,44 +66,8 @@ export default {
 
   data() {
     return {
-      dataBase: [
-        {
-          iconUrl: "icon-facebook.svg",
-          socialName: "@nathanf",
-          socialValue: 1987,
-          socialType: "F",
-          arrowIcon: "up",
-          todayValue: 12,
-          class: "facebook",
-        },
-        {
-          iconUrl: "icon-twitter.svg",
-          socialName: "@nathanf",
-          socialValue: 1044,
-          socialType: "F",
-          arrowIcon: "up",
-          todayValue: 99,
-          class: "twitter",
-        },
-        {
-          iconUrl: "icon-instagram.svg",
-          socialName: "@realnathf",
-          socialValue: 11000,
-          socialType: "F",
-          arrowIcon: "up",
-          todayValue: 1099,
-          class: "instagram",
-        },
-        {
-          iconUrl: "icon-youtube.svg",
-          socialName: "Nathan F.",
-          socialValue: 8239,
-          socialType: "S",
-          arrowIcon: "down",
-          todayValue: 144,
-          class: "youtube",
-        },
-      ],
+      bigData,
+      smallData,
     };
   },
 };
@@ -207,5 +190,27 @@ body {
   height: 7px;
   width: 250px;
   border-radius: 5px 5px 0 0;
+}
+
+#app .bottom-container {
+  max-width: 80%;
+  margin: auto;
+  margin-top: 60px;
+  color: var(--textWhite);
+}
+
+#app .small-card {
+  color: var(--textWhite);
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#app .small-card .small-content {
+  margin-top: 10px;
 }
 </style>

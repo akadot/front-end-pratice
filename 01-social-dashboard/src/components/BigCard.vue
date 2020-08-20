@@ -8,7 +8,7 @@
       <h1>{{socialValue}}</h1>
       <p>{{socialType}}</p>
     </div>
-    <div class="today-info">
+    <div :class="['today-info', arrowIcon]">
       <img v-bind:src="require(`../assets/icons/${arrowIcon}`)" />
       <p>{{todayValue}}</p>
       <p>Today</p>
@@ -84,10 +84,16 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  color: var(--statusGreen);
   font-weight: 700;
   font-size: 12px;
+}
+
+.container .today-info[class*="up"] {
+  color: var(--statusGreen);
+}
+
+.container .today-info[class*="down"] {
+  color: var(--statusRed);
 }
 
 .container .today-info p:nth-child(2) {

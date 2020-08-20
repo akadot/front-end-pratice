@@ -1,0 +1,58 @@
+export default [
+  {
+    cardTitle: "Page Views",
+    cardIcon: "icon-facebook.svg",
+    cardValue: 87,
+    cardArrow: "up",
+    cardPercent: 3,
+  },
+  {
+    cardTitle: "Likes",
+    cardIcon: "icon-facebook.svg",
+    cardValue: 52,
+    cardArrow: "down",
+    cardPercent: 2,
+  },
+  {
+    cardTitle: "Likes",
+    cardIcon: "icon-instagram.svg",
+    cardValue: 5462,
+    cardArrow: "up",
+    cardPercent: 2257,
+  },
+  {
+    cardTitle: "Profile Views",
+    cardIcon: "icon-instagram.svg",
+    cardValue: 52000,
+    cardArrow: "up",
+    cardPercent: 1375,
+  },
+  {
+    cardTitle: "Retweets",
+    cardIcon: "icon-twitter.svg",
+    cardValue: 117,
+    cardArrow: "up",
+    cardPercent: 303,
+  },
+  {
+    cardTitle: "Likes",
+    cardIcon: "icon-twitter.svg",
+    cardValue: 507,
+    cardArrow: "up",
+    cardPercent: 553,
+  },
+  {
+    cardTitle: "Likes",
+    cardIcon: "icon-youtube.svg",
+    cardValue: 107,
+    cardArrow: "down",
+    cardPercent: 19,
+  },
+  {
+    cardTitle: "Total Views",
+    cardIcon: "icon-youtube.svg",
+    cardValue: 1407,
+    cardArrow: "down",
+    cardPercent: 12,
+  },
+];
