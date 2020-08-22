@@ -1,0 +1,45 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--elementDark);
+  color: var(--textDark);
+
+  padding: 30px 20px;
+}
+
+.header-container .header-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.header-container .header-theme {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.header-container .header-theme #switcher {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  -moz-appearance: none;
+}
+
+.header-container .header-theme label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.header-container .header-theme label p {
+  margin-left: 0.5rem;
+}
+
+#moon-icon {
+  fill: var(--textDark);
+  stroke: var(--textDark);
+}

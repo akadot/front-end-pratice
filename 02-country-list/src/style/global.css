@@ -1,0 +1,32 @@
+:root {
+  --elementDark: #2b3945;
+  --bgDark: #202c37;
+  --textDark: #ffffff;
+
+  --textLight: #111517;
+  --inputLight: #858585;
+  --bgLight: #fafafa;
+  --elementLight: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 60%;
+  height: 100%;
+  background-color: var(--bgDark);
+}
+
+body,
+input,
+label,
+a,
+button {
+  font-family: "Nunito Sans", sans-serif;
+}
