@@ -1,0 +1,43 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bgDark);
+  color: var(--textDark);
+  padding: 2rem 1rem;
+}
+
+.header-container .header-title {
+  font-size: 0.5rem;
+  font-weight: 800;
+}
+
+.header-container .header-theme #switch-label p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin-left: 0.5rem;
+}
+
+#switch-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+#switch {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  -moz-appearance: none;
+}
+
+#moon-icon {
+  fill: var(--textDark);
+  stroke: var(--textDark);
+}
+
+#switch:checked + #moon-icon {
+  fill: transparent;
+}
