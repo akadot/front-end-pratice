@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 
+import "./style.css";
+
 const Home = () => {
-  const [data, setData] = useState([]);
+  (async function getApi() {
+    try {
+      const { data } = await axios(
+        "https://restcountries.eu/rest/v2/all?fields=name;flag;population;region;capital"
+      );
+      await localStorage.setItem("countries", JSON.stringify(data));
+    } catch (error) {
+      console.error(error);
+    }
+  })();
 
-  //async function getApi() {
-  //  const api = await axios.get("https://restcountries.eu/rest/v2/all");
-  //  setData(api);
-  //}
-
-  //getApi();
+  const countries = JSON.parse(localStorage.getItem("countries"));
 
   return (
     <div className="home-container">
@@ -18,15 +24,15 @@ const Home = () => {
         <select name="" id=""></select>
       </div>
       <div className="countries">
-        {/*{data.map(function () {
-          return [
-            <img src={data.flag} alt="" />,
-            <h1>{data.name}</h1>,
-            <p>Population: {data.population}</p>,
-            <p>Region: {data.region}</p>,
-            <p>Capital: {data.capital}</p>,
-          ];
-        })}*/}
+        {countries.map((country) => (
+          <div className="country-card" key={country.name}>
+            <img src={country.flag} alt="" />
+            <h1>{country.name}</h1>
+            <p>Population: {country.population}</p>
+            <p>Region: {country.region}</p>
+            <p>Capital: {country.capital}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
