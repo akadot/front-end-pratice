@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bgDark);
+  background-color: var(--elementDark);
   color: var(--textDark);
   padding: 2rem 1rem;
 }

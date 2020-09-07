@@ -20,17 +20,29 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="filters">
-        <input type="search" name="" id="" />
-        <select name="" id=""></select>
+        <input
+          type="search"
+          id="search"
+          placeholder="Search for a country..."
+        />
+        <select id="select"></select>
       </div>
       <div className="countries">
         {countries.map((country) => (
           <div className="country-card" key={country.name}>
             <img src={country.flag} alt="" />
-            <h1>{country.name}</h1>
-            <p>Population: {country.population}</p>
-            <p>Region: {country.region}</p>
-            <p>Capital: {country.capital}</p>
+            <div className="info-card">
+              <h1>{country.name}</h1>
+              <p>
+                Population: <span>{country.population}</span>
+              </p>
+              <p>
+                Region: <span>{country.region}</span>
+              </p>
+              <p>
+                Capital: <span>{country.capital}</span>
+              </p>
+            </div>
           </div>
         ))}
       </div>

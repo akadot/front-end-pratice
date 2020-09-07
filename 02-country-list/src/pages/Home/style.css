@@ -1,4 +1,79 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container .filters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 0.8rem auto;
+}
+
+.home-container .filters #search {
+  width: 100%;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--elementDark);
+  margin-bottom: 3rem;
+  color: var(--textDark);
+  font-size: 0.8rem;
+}
+
+.home-container .filters #search::before {
+  content: "";
+} /*Inserir lupa aqui*/
+
+.home-container .filters #select {
+  width: 50%;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--elementDark);
+  padding: 0.8rem 1rem;
+}
+
+.home-container .countries {
+  width: 100%;
+}
+
+.home-container .countries .country-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+  margin: 2rem auto;
+  border-radius: 0.3rem;
+  background: var(--elementDark);
+}
+
 .home-container .countries .country-card img {
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.home-container .countries .country-card .info-card {
+  color: var(--textDark);
+  padding: 1.5rem 1rem 2rem 1rem;
+}
+
+.home-container .countries .country-card .info-card h1 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.home-container .countries .country-card .info-card p {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.home-container .countries .country-card .info-card p span {
+  font-size: 0.8rem;
+  font-weight: 300;
 }
