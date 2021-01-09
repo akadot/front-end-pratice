@@ -15,6 +15,7 @@
 }
 
 .home-container .filters #search {
+  position: relative;
   width: 100%;
   border: none;
   padding: 0.8rem 1rem;
@@ -27,7 +28,13 @@
 
 .home-container .filters #search::before {
   content: "";
-} /*Inserir lupa aqui*/
+  background-image: url("../../assets/search.svg");
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  left: 0;
+} /*Fail*/
 
 .home-container .filters #select {
   width: 50%;
